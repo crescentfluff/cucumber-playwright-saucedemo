@@ -27,7 +27,7 @@ test('unsuccessful login for locked out user', async ({ page }) => {
 
 test('unsuccessful login with empty credentials', async ({ page }) => {
   const loginPage = new LoginPage(page);
-  await loginAs(page, users.empty);
+  await loginAs(page, users.valid);
 
   const errorMessage = await loginPage.getErrorMessageText();
   expect(errorMessage).toContain('Username is required');
